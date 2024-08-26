@@ -10,7 +10,33 @@ import candle from '../assets/candle.png'
 import left from '../assets/arrow-curve-left-down.png'
 import right from '../assets/arrow-curve-left-right.png'
 import ex from '../assets/arrow-expand-02.png'
+import leftarrow from '../assets/Screenshot from 2024-06-19 11-58-44 1.png'
+import rightarrow from '../assets/Screenshot from 2024-06-19 11-58-44 1 (1).png'
+import one from '../assets/1.png'
+import x from '../assets/x-01.png'
+
 const Home = () => {
+  const [display,setdisplay]=useState('none')
+  const [display1,setdisplay1]=useState('')
+  const [transform,settransform]=useState(-65)
+  const setdisplayfunc =()=>{
+    setdisplay('none')
+    setdisplay1('')
+    settransform(-65)
+  }
+  const setdisplay1func =()=>{
+    setdisplay('')
+    setdisplay1('none')
+    settransform(0)
+  }
+  let text1='Notice'
+  let text2="Board"
+  // useEffect(()=>{
+  //    let splittext1=text1.split('')
+  //    settext(splittext1)
+  //    let splittext2 =text2.split('')
+  //    setsplit(splittext2)
+  // },[])
   return (
     <>
     <Navbar/>
@@ -99,7 +125,7 @@ const Home = () => {
                   <div className='video-div'>
                       <iframe className='video' src= {e.assets.map((elee,index)=>{
                           if(index==0){
-                            console.log(elee.asset_content)
+                           
                              return elee.asset_content
                           } 
 })}>
@@ -292,7 +318,7 @@ const Home = () => {
 
 
 
-                <div className='content-div bg-primary'>
+                <div className='content-div'>
                 <div className='content-head'>
 
 {data.tasks.map((e,)=>{
@@ -334,9 +360,24 @@ const Home = () => {
 <div className='sa-div'>
   <p className='sa-para'>The 4SA Method , How to bring a idea into progress ?</p>
 </div>
-<div className='see-more-div'>
-  <p>See More</p>
+<div className='see-more-div d-flex justify-content-end'>
+  <p className='see-more-para'>See More</p>
 </div>
+<div className='thread-a-div'>
+<i class="fa-solid fa-angle-up fa-2"></i>
+<p className='introduction-para d-inline'>Thread A</p>
+</div>
+<div className='sa-div1'>
+  <p className='sa-para'>How are you going to develop your stratergy ? Which method are you going to use to develop a stratergy ? What if the project is lengthy?</p>
+</div>
+<div className='see-more-div d-flex justify-content-end'>
+  <p className='see-more-para'>See More</p>
+</div>
+
+<div className='example-div'>
+<p className=' example-para'>Example 1</p>
+</div>
+<p className='last-para'>You have a concept , How will you put into progress?</p>
                 </div>
 
 
@@ -349,6 +390,70 @@ const Home = () => {
 
 
               </div>
+            </div>
+            </div>
+           
+            <div className='journey-board-div' style={{translate:`${transform}%`}}>
+              <div className='journey-board-head'>
+                <p className='journey-board-para'>Journey Board</p>
+                <img style={{display:`${display}`}} onClick={(()=>{setdisplayfunc()})} src={rightarrow}></img>
+                <img style={{display:`${display1}`}} onClick={(()=>{setdisplay1func()})} src={leftarrow}></img>
+              </div>
+              <div>
+                {data.tasks.map((e)=>{
+                     return <>
+                      <ul>
+                      <li className='li-bold' style={{display:`${display}`}}>{e.task_title}</li>
+                      {e.assets.map((ele)=>{
+                         return <li className='li' style={{
+                          fontFamily:"Poppins",
+                          fontSize:"16px",
+                           fontWeight:"400",
+                           lineHeight:"24px",
+                           letterSpacing:"0.02em",
+                           textAlign:'left',
+                           display:`${display}`,
+                           paddingLeft:'20px',
+                           marginLeft:'25px'
+                        }}>{ele.asset_title}</li> 
+                        })}
+                      
+                      </ul>
+                     </>
+                })}
+                <div className='d-flex justify-content-end'>
+                  <div className='one-div' style={{display:`${display1}`}}>
+                    <img src={one}></img>
+                  </div>
+                </div> 
+              </div>
+            </div>
+
+            
+            <div className='discuss-board'>
+            <div className='notice-board'>
+            
+              <img className='img-x' src={x}></img>
+              
+              {/* <span className='notice'>Notice Board</span> */}
+                
+           
+              {text1.split('').map((e)=>{
+                return <>
+                <span className='notice me-3 '>{e}</span>
+                </>
+              })}
+              <span className='notice-main'>
+              {text2.split('').map((e)=>{
+                return <>
+              
+                <span className='notice1 me-3'> {e}</span>
+           
+                </>
+              })}
+              </span>
+
+              
             </div>
             </div>
          </div>
