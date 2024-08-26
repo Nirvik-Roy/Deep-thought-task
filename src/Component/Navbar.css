@@ -1,0 +1,57 @@
+.nav_bar{
+   width: 100%;
+    height: 90px;
+    background-color: #F0F0F0;
+    display: grid;
+    grid-template-columns:76% 20%;
+    box-shadow: 0 2px 7px rgba(34, 34, 34, 0.648);
+}
+.icon-div{
+    width: 30px;
+    height: 32.37px;
+    background-color: #3683F0;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+.icon-div-{
+    width: 30px;
+    height: 32.37px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+.nav-content-1{
+  display: grid;
+  align-items: center;
+  padding-left: 125px;
+}
+.company-logo-img{
+   scale: 1.6;
+}
+.nav-content-2{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.fa-ellipsis-vertical{
+    color: #3683F0;
+    font-size: 20px;
+}
+.person-img{
+    width: 100%;
+    height: 100%;
+}
+.bell-img-div{
+    position: relative;
+}
+.red-circle{
+    width: 7.5px;
+    height: 7.5px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 6px;
+}
