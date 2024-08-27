@@ -14,6 +14,9 @@ import leftarrow from '../assets/Screenshot from 2024-06-19 11-58-44 1.png'
 import rightarrow from '../assets/Screenshot from 2024-06-19 11-58-44 1 (1).png'
 import one from '../assets/1.png'
 import x from '../assets/x-01.png'
+import question from '../assets/question-mark (2) 1.png'
+import meeting from '../assets/meeting 1.png'
+import schedule from '../assets/schedule (1) 1.png'
 
 const Home = () => {
   const [display,setdisplay]=useState('none')
@@ -429,32 +432,33 @@ const Home = () => {
               </div>
             </div>
 
-            
-            <div className='discuss-board'>
-            <div className='notice-board'>
-            
-              <img className='img-x' src={x}></img>
-              
-              {/* <span className='notice'>Notice Board</span> */}
-                
-           
-              {text1.split('').map((e)=>{
-                return <>
-                <span className='notice me-3 '>{e}</span>
-                </>
-              })}
-              <span className='notice-main'>
-              {text2.split('').map((e)=>{
-                return <>
-              
-                <span className='notice1 me-3'> {e}</span>
-           
-                </>
-              })}
-              </span>
 
-              
+
+            <div className='notice-board-main'>
+              <div className='notice-board-side'>
+                <div>
+                  <img className='img-x' src={x}></img>
+                </div>
+                <div className='text-light mt-4'>
+                  {text1.split('').map((e)=>{
+                    return <p className='notice-para'>{e}</p>
+                  })}
+                </div>
+                <div className='text-light mt-4'>
+                    {text2.split('').map((e)=>{
+                      return <p className='board-para'>{e}</p>
+                    })}
+                </div>
+              </div>
             </div>
+            <div className='blue-div'>
+            <img src={question} className='blue-img'></img>
+            </div>
+            <div className='blue-div1'>
+            <img src={meeting} className='blue-img'></img>
+            </div>
+            <div className='blue-div2'>
+            <img src={schedule} className='blue-img'></img>
             </div>
          </div>
       </section>
